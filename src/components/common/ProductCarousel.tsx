@@ -43,7 +43,7 @@ export default function ProductCarousel() {
     function start() {
       stop();
       interval = window.setInterval(() => {
-        if (isPaused) return;
+        if (isPaused || !el) return;
         const scrollAmount = itemWidth + GAP;
         const maxScrollLeft = el.scrollWidth - el.clientWidth;
 
