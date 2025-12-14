@@ -1,0 +1,43 @@
+{
+  "name": "vk-fans-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "next": "16.0.10",
+    "react": "19.2.1",
+    "react-dom": "19.2.1",
+    "recharts": "^2.15.2",
+    "@dhiwise/component-tagger": "^1.0.10",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16"
+    
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.10",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@netlify/plugin-nextjs": "^5.11.1",
+    "@types/node": "^20",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "autoprefixer": "10.4.2",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.6",
+    "postcss": "8.4.8",
+    "prettier": "^3.5.3",
+    "tailwindcss-animate": "^1.0.7"
+    
+  }
+}

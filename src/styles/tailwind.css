@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: #F7FAFC;
+  --color-foreground: #1A202C;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1A202C;
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #1A202C;
+  --color-muted: #EDF2F7;
+  --color-muted-foreground: #4A5568;
+  --color-primary: #2C5282;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #B7791F;
+  --color-secondary-foreground: #FFFFFF;
+  --color-accent: #E53E3E;
+  --color-accent-foreground: #FFFFFF;
+  --color-success: #38A169;
+  --color-success-foreground: #FFFFFF;
+  --color-warning: #D69E2E;
+  --color-warning-foreground: #1A202C;
+  --color-error: #E53E3E;
+  --color-error-foreground: #FFFFFF;
+  --color-destructive: #E53E3E;
+  --color-destructive-foreground: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-input: #E2E8F0;
+  --color-ring: #2C5282;
+  --color-industrial-steel: #2C3E50;
+  --color-industrial-steel-foreground: #FFFFFF;
+  --color-warm-brass: #E67E22;
+  --color-warm-brass-foreground: #FFFFFF;
+  --color-action-red: #E74C3C;
+  --color-action-red-foreground: #FFFFFF;
+  --color-trust-blue: #3498DB;
+  --color-trust-blue-foreground: #FFFFFF;
+  --color-text-secondary: #7F8C8D;
+  --color-surface: #EDF2F7;
+}
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #F7FAFC; /* gray-50 */
+    --color-foreground: #1A202C; /* gray-900 */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #1A202C; /* gray-900 */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #1A202C; /* gray-900 */
+    --color-muted: #EDF2F7; /* gray-200 */
+    --color-muted-foreground: #4A5568; /* gray-600 */
+
+    /* Brand Colors */
+    --color-primary: #2C5282; /* blue-800 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    --color-secondary: #B7791F; /* yellow-700 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    --color-accent: #E53E3E; /* red-600 */
+    --color-accent-foreground: #FFFFFF; /* white */
+
+    /* Semantic Colors */
+    --color-success: #38A169; /* green-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #D69E2E; /* yellow-600 */
+    --color-warning-foreground: #1A202C; /* gray-900 */
+    --color-error: #E53E3E; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #E53E3E; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+
+    /* UI Elements */
+    --color-border: #E2E8F0; /* gray-300 */
+    --color-input: #E2E8F0; /* gray-300 */
+    --color-ring: #2C5282; /* blue-800 */
+
+    /* Additional Brand Colors */
+    --color-industrial-steel: #2C3E50; /* slate-800 */
+    --color-industrial-steel-foreground: #FFFFFF; /* white */
+    --color-warm-brass: #E67E22; /* orange-600 */
+    --color-warm-brass-foreground: #FFFFFF; /* white */
+    --color-action-red: #E74C3C; /* red-500 */
+    --color-action-red-foreground: #FFFFFF; /* white */
+    --color-trust-blue: #3498DB; /* blue-500 */
+    --color-trust-blue-foreground: #FFFFFF; /* white */
+    --color-text-secondary: #7F8C8D; /* gray-500 */
+    --color-surface: #EDF2F7; /* gray-200 */
+
+    /* Spacing & Layout */
+    --radius: 0.25rem; /* 4px */
+    --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-industrial: 0 4px 12px rgba(44, 62, 80, 0.15);
+  }
+
+  * {
+    border-color: theme(colors.border);
+  }
+
+  body {
+    background-color: theme(colors.background);
+    color: theme(colors.foreground);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-smooth {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .shadow-industrial {
+    box-shadow: var(--shadow-industrial);
+  }
+
+  .shadow-subtle {
+    box-shadow: var(--shadow-subtle);
+  }
+
+  /* Fan Animation Keyframes */
+  @keyframes fan-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes fan-spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes fan-spin-reverse {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes fan-blade-wobble {
+    0%, 100% {
+      transform: rotate(0deg) scale(1);
+    }
+    25% {
+      transform: rotate(2deg) scale(1.02);
+    }
+    75% {
+      transform: rotate(-2deg) scale(0.98);
+    }
+  }
+
+  @keyframes fan-oscillate {
+    0%, 100% {
+      transform: rotate(-15deg);
+    }
+    50% {
+      transform: rotate(15deg);
+    }
+  }
+
+  @keyframes fan-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+
+  /* Fan Animation Classes */
+  .animate-fan-spin {
+    animation: fan-spin 2s linear infinite;
+  }
+
+  .animate-fan-spin-slow {
+    animation: fan-spin-slow 4s linear infinite;
+  }
+
+  .animate-fan-spin-fast {
+    animation: fan-spin 1s linear infinite;
+  }
+
+  .animate-fan-spin-reverse {
+    animation: fan-spin-reverse 3s linear infinite;
+  }
+
+  .animate-fan-wobble {
+    animation: fan-blade-wobble 2s ease-in-out infinite;
+  }
+
+  .animate-fan-oscillate {
+    animation: fan-oscillate 4s ease-in-out infinite;
+  }
+
+  .animate-fan-pulse {
+    animation: fan-pulse 3s ease-in-out infinite;
+  }
+
+  /* Hover variants */
+  .hover-fan-spin:hover {
+    animation: fan-spin 1s linear infinite;
+  }
+
+  .hover-fan-spin-slow:hover {
+    animation: fan-spin-slow 3s linear infinite;
+  }
+
+  /* Animated fan decorations */
+  .fan-decoration {
+    position: relative;
+    display: inline-block;
+  }
+
+  .fan-decoration::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(44, 82, 130, 0.1) 0%, transparent 70%);
+    animation: fan-pulse 3s ease-in-out infinite;
+  }
+}
