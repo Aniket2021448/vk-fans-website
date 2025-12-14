@@ -246,4 +246,13 @@
     background: radial-gradient(circle, rgba(44, 82, 130, 0.1) 0%, transparent 70%);
     animation: fan-pulse 3s ease-in-out infinite;
   }
+
+  /* Hide scrollbars utility for carousels */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Header from '@/components/common/Header';
 import ProductCatalogInteractive from './components/ProductCatalogInteractive';
+import Footer from '../homepage/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Product Catalog - IndustrialFan Pro',
@@ -12,6 +13,7 @@ export default function ProductCatalogPage() {
     <main className="min-h-screen bg-background">
       <Header />
       <ProductCatalogInteractive />
+      <Footer />
     </main>
   );
 }

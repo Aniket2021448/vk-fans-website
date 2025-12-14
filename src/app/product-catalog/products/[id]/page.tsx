@@ -420,10 +420,10 @@ export default function ProductDetailPage() {
                 {product.inStock ? 'Get Quote' : 'Notify When Available'}
               </button>
 
-              <button className="w-full px-6 py-3 border border-border rounded-lg font-semibold text-foreground hover:bg-muted transition-colors flex items-center justify-center gap-2">
+              <Link href="/contact-us" className="w-full px-6 py-3 border border-border rounded-lg font-semibold text-foreground hover:bg-muted transition-colors flex items-center justify-center gap-2">
                 <Icon name="PhoneIcon" size={18} />
                 Contact Sales
-              </button>
+              </Link>
             </div>
           </div>
         </div>

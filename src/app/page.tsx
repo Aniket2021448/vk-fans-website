@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Header from '@/components/common/Header';
 import HeroSection from './homepage/components/HeroSection';
-import ProductCategories from './homepage/components/ProductCatefories';
+import ProductCategories from './homepage/components/ProductCategories';
 import ManufacturingShowcase from './homepage/components/ManufacturingShowcase';
 import TrustSignals from './homepage/components/TrustSignals';
 import TestimonialCarousel from './homepage/components/TestimonialCarouel';

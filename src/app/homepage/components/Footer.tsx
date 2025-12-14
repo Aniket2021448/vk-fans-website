@@ -25,13 +25,13 @@ const Footer = () => {
       { label: 'Manufacturing Story', href: '/manufacturing-story' },
       { label: 'Quality Standards', href: '/manufacturing-story' },
       { label: 'Certifications', href: '/manufacturing-story' },
-      { label: 'Contact Us', href: '/homepage' },
+      { label: 'Contact Us', href: '/contact-us' },
     ],
     support: [
-      { label: 'Technical Support', href: '/product-catalog' },
-      { label: 'Installation Guides', href: '/product-catalog' },
-      { label: 'Warranty Information', href: '/product-catalog' },
-      { label: 'Customer Service', href: '/homepage' },
+      { label: 'Technical Support', href: '/support/technical-support' },
+      { label: 'Installation Guides', href: '/support/installation-guides' },
+      { label: 'Warranty Information', href: '/support/warranty-information' },
+      { label: 'Customer Service', href: '/support/customer-service' },
     ],
   };
 

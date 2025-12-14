@@ -67,7 +67,8 @@
 import type { Metadata } from 'next';
 import Header from '@/components/common/Header';
 import HeroSection from './components/HeroSection';
-import ProductCategories from './components/ProductCatefories';
+import ProductCarousel from '@/components/common/ProductCarousel';
+import ProductCategories from './components/ProductCategories';
 import ManufacturingShowcase from './components/ManufacturingShowcase';
 import TrustSignals from './components/TrustSignals';
 import TestimonialCarousel from './components/TestimonialCarouel';
@@ -117,6 +118,7 @@ export default function Homepage() {
         <HeroSection />
         <TrustSignals />
         <ProductCategories />
+        <ProductCarousel />
         <ManufacturingShowcase />
         <TestimonialCarousel />
         <SmartProductFinder />

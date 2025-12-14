@@ -9,6 +9,7 @@ import CertificationsSection from './components/CertificationsSection';
 import SustainabilitySection from './components/SustainabilitySection';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
+import ProductCarousel from '@/components/common/ProductCarousel';
 
 export const metadata: Metadata = {
   title: 'Manufacturing Story - IndustrialFan Pro',
@@ -22,6 +23,7 @@ export default function ManufacturingStoryPage() {
       
       <main>
         <HeroSection />
+        <ProductCarousel />
         <ProductionStats />
         <ManufacturingTimeline />
         <TeamShowcase />
