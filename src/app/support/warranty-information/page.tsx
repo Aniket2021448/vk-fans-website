@@ -90,7 +90,7 @@ export default function WarrantyInformationPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground py-16">
+      <section className="bg-linear-to-r from-primary to-primary/80 text-primary-foreground py-16">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">Warranty Information</h1>
           <p className="text-lg opacity-90">
@@ -118,13 +118,13 @@ export default function WarrantyInformationPage() {
                 <div className="space-y-3 text-left flex-1">
                   {plan.coverage.map((item, i) => (
                     <div key={i} className="flex items-center gap-2">
-                      <Icon name="CheckCircleIcon" size={18} className="text-success flex-shrink-0" />
+                      <Icon name="CheckCircleIcon" size={18} className="text-success shrink-0" />
                       <span className="text-muted-foreground">{item}</span>
                     </div>
                   ))}
                   {plan.perks?.map((perk, i) => (
                     <div key={`perk-${i}`} className="flex items-center gap-2">
-                      <Icon name="InformationCircleIcon" size={18} className="text-primary flex-shrink-0" />
+                      <Icon name="InformationCircleIcon" size={18} className="text-primary shrink-0" />
                       <span className="text-muted-foreground">{perk}</span>
                     </div>
                   ))}

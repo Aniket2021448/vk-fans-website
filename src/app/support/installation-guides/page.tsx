@@ -80,7 +80,7 @@ export default function InstallationGuidesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground py-16">
+      <section className="bg-linear-to-r from-primary to-primary/80 text-primary-foreground py-16">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">Installation Guides</h1>
           <p className="text-lg opacity-90">

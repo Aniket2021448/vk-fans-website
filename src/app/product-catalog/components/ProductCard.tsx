@@ -103,11 +103,11 @@ export default function ProductCard({ product, onCompare, isComparing }: Product
       </div>
 
       {/* Content Section */}
-      <div className="p-4 flex flex-col flex-grow">
+      <div className="p-4 flex flex-col grow">
         {/* Category & Name */}
         <div className="mb-3">
           <p className="text-xs text-text-secondary uppercase tracking-wide mb-1">{product.category}</p>
-          <h3 className="text-lg font-semibold text-foreground min-h-[3.5rem] line-clamp-2">{product.name}</h3>
+          <h3 className="text-lg font-semibold text-foreground min-h-14 line-clamp-2">{product.name}</h3>
         </div>
 
         {/* Key Specifications */}
@@ -131,7 +131,7 @@ export default function ProductCard({ product, onCompare, isComparing }: Product
         </div>
 
         {/* Features */}
-        <div className="mb-4 min-h-[2.5rem]">
+        <div className="mb-4 min-h-10">
           <div className="flex flex-wrap gap-1">
             {product.features.slice(0, 3).map((feature, index) => (
               <span 

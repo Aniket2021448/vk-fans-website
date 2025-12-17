@@ -69,7 +69,7 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground py-16">
+      <section className="bg-linear-to-r from-primary to-primary/80 text-primary-foreground py-16">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
           <p className="text-lg opacity-90">
@@ -92,7 +92,7 @@ export default function ContactPage() {
                   className="block p-6 bg-card border border-border rounded-lg hover:shadow-industrial transition-all"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                       <Icon name={method.icon as any} size={24} className="text-primary" />
                     </div>
                     <div>
