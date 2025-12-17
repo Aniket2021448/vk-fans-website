@@ -42,8 +42,8 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
 
       <div className="absolute inset-0">
         <AppImage
-          src="https://img.rocket.new/generatedImages/rocket_gen_img_167d7cfd4-1764659144088.png"
-          alt="Modern industrial manufacturing facility with advanced machinery and bright overhead lighting"
+          src="/motor-copper-wiring.webp"
+          alt="Closeup of copper-wound electric motor with precision coils and stamped core"
           className="w-full h-full object-cover"
           priority
         />

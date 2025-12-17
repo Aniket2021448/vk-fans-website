@@ -81,8 +81,8 @@ export default function ProductCarousel() {
   return (
     <section className="w-full py-8 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-2xl font-bold text-foreground">Explore More Products</h2>
+        <div className="flex items-center justify-center mb-6">
+          <h2 className="text-3xl font-bold text-foreground text-center">Explore More Products</h2>
         </div>
 
         <div className="relative">
@@ -96,10 +96,12 @@ export default function ProductCarousel() {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="snap-start flex-none"
-                style={{ width: `${itemWidth}px` }}
+                className="snap-start flex-none h-full"
+                style={{ width: `${itemWidth}px`, minHeight: '100%' }}
               >
-                <ProductCard product={product} onCompare={() => {}} isComparing={false} />
+                <div className="h-full">
+                  <ProductCard product={product} onCompare={() => {}} isComparing={false} />
+                </div>
               </div>
             ))}
           </div>

@@ -3,10 +3,33 @@ import Header from '@/components/common/Header';
 import ProductCarousel from '@/components/common/ProductCarousel';
 import Footer from '@/app/homepage/components/Footer';
 import Icon from '@/components/ui/AppIcon';
+import { BUSINESS_INFO } from '@/constants/business';
 
 export const metadata: Metadata = {
-  title: 'Installation Guides - VK Fans',
-  description: 'Step-by-step installation guides for all VK Fans products. Professional installation instructions for easy setup.',
+  title: `Installation Guides & Instructions - VK Fans | DIY Setup`,
+  description: `Complete step-by-step installation guides for VK Fans products. Learn how to install ceiling fans, pedestal fans, wall fans, and exhaust fans safely and correctly at home.`,
+  keywords: [
+    'ceiling fan installation',
+    'pedestal fan installation',
+    'wall fan installation',
+    'exhaust fan installation',
+    'fan mounting guide',
+    'fan setup instructions',
+    'DIY fan installation',
+    'fan electrical connection',
+    'fan safety installation',
+    'installation requirements',
+    ...BUSINESS_INFO.seo.keywords,
+  ].join(', '),
+  openGraph: {
+    title: `${BUSINESS_INFO.name} - Installation Guides`,
+    description: 'Easy-to-follow step-by-step installation instructions for all fan types.',
+    type: 'website',
+    url: 'https://vkfans.com/support/installation-guides',
+  },
+  alternates: {
+    canonical: 'https://vkfans.com/support/installation-guides',
+  },
 };
 
 export default function InstallationGuidesPage() {
@@ -94,10 +117,7 @@ export default function InstallationGuidesPage() {
                   <Icon name={guide.icon as any} size={24} className="text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">{guide.title}</h3>
-                <p className="text-muted-foreground mb-4">{guide.description}</p>
-                <button className="text-primary font-medium hover:underline flex items-center gap-1">
-                  View Guide <Icon name="ArrowRightIcon" size={16} />
-                </button>
+                <p className="text-muted-foreground">{guide.description}</p>
               </div>
             ))}
           </div>

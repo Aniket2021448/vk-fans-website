@@ -41,20 +41,18 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
         </>
       )}
 
-      {/* Background Video/Image */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        {/* Geometric Pattern Overlay */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent)',
-          backgroundSize: '50px 50px'
-        }} />
         <AppImage
-          src="https://img.rocket.new/generatedImages/rocket_gen_img_167d7cfd4-1764659144088.png"
-          alt="Modern industrial manufacturing facility with precision machinery and quality control stations"
-          className="w-full h-full object-cover opacity-40"
+          src="/motor-copper-wiring.webp"
+          alt="Closeup of copper-wound electric motor with precision coils and stamped core"
+          className="w-full h-full object-cover"
+          fill
+          sizes="100vw"
           priority
+          fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-industrial-steel/95 via-industrial-steel/80 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-industrial-steel/95 via-industrial-steel/80 to-transparent" />
       </div>
 
       {/* Content */}

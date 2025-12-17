@@ -169,16 +169,20 @@ const TestimonialCarousel = () => {
           </button>
 
           {/* Indicators */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-3 mt-8">
             {testimonials.map((_, index) =>
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
+              className={`p-2 rounded-full transition-all ${
               index === currentIndex ?
-              'bg-primary w-8' : 'bg-border hover:bg-muted-foreground'}`
+              'bg-primary w-10 h-10' : 'w-10 h-10 bg-border hover:bg-muted-foreground'}`
               }
-              aria-label={`Go to testimonial ${index + 1}`} />
+              aria-label={`Go to testimonial ${index + 1}`}>
+              <span className={`block w-2 h-2 rounded-full mx-auto ${
+                index === currentIndex ? 'bg-white' : 'bg-current'
+              }`} />
+            </button>
 
             )}
           </div>

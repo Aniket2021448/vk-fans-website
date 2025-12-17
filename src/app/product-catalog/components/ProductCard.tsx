@@ -39,7 +39,7 @@ export default function ProductCard({ product, onCompare, isComparing }: Product
 
   return (
     <div 
-      className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-industrial transition-all duration-300 relative"
+      className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-industrial transition-all duration-300 relative flex flex-col h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -62,6 +62,7 @@ export default function ProductCard({ product, onCompare, isComparing }: Product
           src={product.image}
           alt={product.alt}
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
         />
         
         {/* Energy Rating Badge with pulse animation */}
@@ -102,11 +103,11 @@ export default function ProductCard({ product, onCompare, isComparing }: Product
       </div>
 
       {/* Content Section */}
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         {/* Category & Name */}
         <div className="mb-3">
           <p className="text-xs text-text-secondary uppercase tracking-wide mb-1">{product.category}</p>
-          <h3 className="text-lg font-semibold text-foreground">{product.name}</h3>
+          <h3 className="text-lg font-semibold text-foreground min-h-[3.5rem] line-clamp-2">{product.name}</h3>
         </div>
 
         {/* Key Specifications */}
@@ -130,7 +131,7 @@ export default function ProductCard({ product, onCompare, isComparing }: Product
         </div>
 
         {/* Features */}
-        <div className="mb-4">
+        <div className="mb-4 min-h-[2.5rem]">
           <div className="flex flex-wrap gap-1">
             {product.features.slice(0, 3).map((feature, index) => (
               <span 
@@ -144,7 +145,7 @@ export default function ProductCard({ product, onCompare, isComparing }: Product
         </div>
 
         {/* Price & CTA */}
-        <div className="flex items-center justify-between pt-4 border-t border-border gap-3">
+        <div className="flex items-center justify-between pt-4 border-t border-border gap-3 mt-auto">
           <div>
             <p className="text-2xl font-bold text-primary">₹{product.price.toLocaleString()}</p>
             <p className="text-xs text-text-secondary">Direct from factory</p>

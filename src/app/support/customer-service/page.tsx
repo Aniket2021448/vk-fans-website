@@ -3,10 +3,33 @@ import Header from '@/components/common/Header';
 import ProductCarousel from '@/components/common/ProductCarousel';
 import Footer from '@/app/homepage/components/Footer';
 import Icon from '@/components/ui/AppIcon';
+import { BUSINESS_INFO } from '@/constants/business';
 
 export const metadata: Metadata = {
-  title: 'Customer Service - VK Fans',
-  description: 'VK Fans customer service center. Contact support, track orders, and manage your account.',
+  title: `Customer Service & Support - VK Fans | Fan Maintenance & Care`,
+  description: `24/7 customer service support for VK Fans products. Get answers to fan maintenance, installation help, warranty support, and product care. Email, phone, and chat support available.`,
+  keywords: [
+    'fan customer service',
+    'fan support center',
+    'ceiling fan support',
+    'fan maintenance help',
+    'product warranty support',
+    'fan installation support',
+    'customer care',
+    'technical assistance',
+    'fan troubleshooting',
+    'fan care guides',
+    ...BUSINESS_INFO.seo.keywords,
+  ].join(', '),
+  openGraph: {
+    title: `${BUSINESS_INFO.name} - 24/7 Customer Support`,
+    description: 'Expert support for fan installation, maintenance, and warranty services.',
+    type: 'website',
+    url: 'https://vkfans.com/support/customer-service',
+  },
+  alternates: {
+    canonical: 'https://vkfans.com/support/customer-service',
+  },
 };
 
 export default function CustomerServicePage() {

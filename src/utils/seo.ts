@@ -115,3 +115,78 @@ export function generateBreadcrumbSchema(items: Array<{ name: string; url: strin
     })),
   };
 }
+
+export function generateFAQSchema(faqs: Array<{ question: string; answer: string }>): StructuredData {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function generateProductListingSchema(products: Array<{
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  url: string;
+}>): StructuredData {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: products.map((product, index) => ({
+      '@type': 'Product',
+      position: index + 1,
+      name: product.name,
+      description: product.description,
+      image: product.image,
+      url: `https://vkfans.com${product.url}`,
+      brand: {
+        '@type': 'Brand',
+        name: BUSINESS_INFO.name,
+      },
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'INR',
+        price: product.price,
+      },
+    })),
+  };
+}
+
+export interface PageSEOProps {
+  title: string;
+  description: string;
+  keywords: string[];
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+}
+
+export function generatePageSEO(props: PageSEOProps) {
+  return {
+    title: props.title,
+    description: props.description,
+    keywords: props.keywords.join(', '),
+    canonical: props.canonical || 'https://vkfans.com',
+    openGraph: {
+      type: props.ogType || 'website',
+      title: props.title,
+      description: props.description,
+      image: props.ogImage || 'https://vkfans.com/og-image.jpg',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: props.title,
+      description: props.description,
+      image: props.ogImage || 'https://vkfans.com/og-image.jpg',
+    },
+  };
+}

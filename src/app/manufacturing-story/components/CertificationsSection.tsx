@@ -22,7 +22,7 @@ const CertificationsSection = ({ className = '' }: CertificationsSectionProps) =
       issuer: 'International Organization for Standardization',
       year: '2023',
       description: 'Quality Management System certification ensuring consistent product quality',
-      icon: 'ShieldCheckIcon'
+      icon: 'CheckCircleIcon'
     },
     {
       id: 2,
@@ -46,7 +46,7 @@ const CertificationsSection = ({ className = '' }: CertificationsSectionProps) =
       issuer: 'European Conformity',
       year: '2023',
       description: 'Compliance with EU safety, health, and environmental requirements',
-      icon: 'GlobeAltIcon'
+      icon: 'CheckIcon'
     },
     {
       id: 5,
@@ -54,7 +54,7 @@ const CertificationsSection = ({ className = '' }: CertificationsSectionProps) =
       issuer: 'Occupational Safety and Health Administration',
       year: '2024',
       description: 'Workplace safety standards compliance for manufacturing operations',
-      icon: 'UserGroupIcon'
+      icon: 'CheckCircleIcon'
     },
     {
       id: 6,
@@ -62,7 +62,7 @@ const CertificationsSection = ({ className = '' }: CertificationsSectionProps) =
       issuer: 'Restriction of Hazardous Substances',
       year: '2023',
       description: 'Environmental certification for hazardous substance restrictions',
-      icon: 'BeakerIcon'
+      icon: 'CheckIcon'
     }
   ];
 
@@ -86,6 +86,9 @@ const CertificationsSection = ({ className = '' }: CertificationsSectionProps) =
             Our commitment to quality is validated by industry-leading certifications
           </p>
         </div>
+        <div className="sr-only">
+          <h3>Industry Certifications</h3>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {certifications.map((cert) => (
@@ -102,9 +105,9 @@ const CertificationsSection = ({ className = '' }: CertificationsSectionProps) =
                 </span>
               </div>
 
-              <h3 className="text-xl font-bold text-industrial-steel mb-2">
+              <h4 className="text-xl font-bold text-industrial-steel mb-2">
                 {cert.name}
-              </h3>
+              </h4>
 
               <div className="text-sm font-medium text-primary mb-3">
                 {cert.issuer}
@@ -129,7 +132,7 @@ const CertificationsSection = ({ className = '' }: CertificationsSectionProps) =
               </p>
             </div>
             <button className="px-6 py-3 bg-primary text-primary-foreground font-semibold rounded hover:bg-primary/90 transition-colors shadow-lg flex items-center whitespace-nowrap">
-              <Icon name="ArrowDownTrayIcon" size={20} className="mr-2" />
+              <Icon name="ArrowRightIcon" size={20} className="mr-2" />
               Download All Certificates
             </button>
           </div>

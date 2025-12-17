@@ -6,8 +6,30 @@ import Icon from '@/components/ui/AppIcon';
 import { BUSINESS_INFO } from '@/constants/business';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - VK Fans',
-  description: 'Get in touch with VK Fans. Contact our sales and support teams for inquiries, quotes, and assistance.',
+  title: `Contact VK Fans - Industrial Fan Manufacturer in Delhi | Direct from Factory`,
+  description: `Contact VK Fans for wholesale ceiling fans, exhaust fans, and commercial ventilation solutions. Direct manufacturer in Delhi with expert support. Call ${BUSINESS_INFO.contact.phone} or email for bulk orders.`,
+  keywords: [
+    'contact ceiling fan manufacturer',
+    'buy fans wholesale Delhi',
+    'industrial fans direct factory',
+    'fan bulk orders',
+    'ventilation solutions provider',
+    'commercial fans supplier',
+    'industrial fan distributor',
+    'fan enquiry',
+    'fan quote request',
+    'Delhi fan manufacturer contact',
+    ...BUSINESS_INFO.seo.keywords,
+  ].join(', '),
+  openGraph: {
+    title: `Contact ${BUSINESS_INFO.name} - Direct from Manufacturer`,
+    description: 'Get in touch for bulk orders, custom solutions, and expert support on industrial fans.',
+    type: 'website',
+    url: 'https://vkfans.com/contact-us',
+  },
+  alternates: {
+    canonical: 'https://vkfans.com/contact-us',
+  },
 };
 
 export default function ContactPage() {

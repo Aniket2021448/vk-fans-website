@@ -58,7 +58,7 @@ const Header = ({ className = '' }: HeaderProps) => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo Section with rotating fan */}
-            <Link href="/" className="flex items-center flex-shrink-0 gap-3">
+            <Link href="/" className="flex items-center shrink-0 gap-3">
               <div className="w-10 h-10 relative">
                 <svg viewBox="0 0 100 100" className="w-full h-full text-[#ff4c29]" aria-hidden>
                   <g className="animate-spin origin-center" fill="currentColor">
@@ -78,7 +78,7 @@ const Header = ({ className = '' }: HeaderProps) => {
             {/* (Navigation moved to right side next to CTA on wide screens) */}
 
             {/* Right Section - Navigation + Contact Sales CTA */}
-            <div className="hidden lg:flex items-center gap-6 flex-shrink-0">
+            <div className="hidden lg:flex items-center gap-6 shrink-0">
               <nav className="hidden lg:flex items-center gap-6 mr-2">
                 <Link href="/" className="text-base font-semibold text-[#222] hover:text-[#ff4c29] transition-colors">Home</Link>
                 <Link href="/product-catalog" className="text-base font-semibold text-[#222] hover:text-[#ff4c29] transition-colors">Portfolio</Link>
@@ -104,22 +104,19 @@ const Header = ({ className = '' }: HeaderProps) => {
             </button>
           </div>
 
-          {/* Mobile Navigation */}
+          {/* Mobile Navigation (mirrors desktop) */}
           {isMobileMenuOpen && (
             <div className="lg:hidden pb-4 border-t border-[#e5e5e5]">
               <nav className="flex flex-col space-y-2 mt-4">
                 <Link href="/" className="px-4 py-2 text-base font-semibold text-[#222] hover:text-[#ff4c29] transition-colors rounded">Home</Link>
-                <Link href="#" className="px-4 py-2 text-base font-semibold text-[#222] hover:text-[#ff4c29] transition-colors rounded">Pages</Link>
                 <Link href="/product-catalog" className="px-4 py-2 text-base font-semibold text-[#222] hover:text-[#ff4c29] transition-colors rounded">Portfolio</Link>
-                <Link href="#" className="px-4 py-2 text-base font-semibold text-[#222] hover:text-[#ff4c29] transition-colors rounded">Shop</Link>
-                <Link href="#" className="px-4 py-2 text-base font-semibold text-[#222] hover:text-[#ff4c29] transition-colors rounded">Blog</Link>
-                <Link href="#" className="px-4 py-2 text-base font-semibold text-[#222] hover:text-[#ff4c29] transition-colors rounded">Features</Link>
+                <Link href="/manufacturing-story" className="px-4 py-2 text-base font-semibold text-[#222] hover:text-[#ff4c29] transition-colors rounded">Our Story</Link>
                 <a
-                  href="#"
+                  href="/contact-us"
                   className="px-4 py-3 text-base font-bold text-white bg-[#ff4c29] rounded border-2 border-[#ff4c29] hover:bg-[#ff6a47] hover:border-[#ff6a47] transition-colors mt-4 shadow-md"
                   style={{ boxShadow: '0 4px 0 #d63b1a' }}
                 >
-                  REQUEST A QUOTE
+                  Contact Sales
                 </a>
               </nav>
             </div>

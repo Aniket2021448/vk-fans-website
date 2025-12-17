@@ -1,4 +1,5 @@
 import Icon from '@/components/ui/AppIcon';
+import { BUSINESS_INFO } from '@/constants/business';
 
 interface CTASectionProps {
   className?: string;
@@ -32,19 +33,19 @@ const CTASection = ({ className = '' }: CTASectionProps) => {
           <div className="flex flex-col items-center">
             <Icon name="PhoneIcon" size={24} className="mb-2" />
             <div className="font-semibold mb-1">Call Us</div>
-            <div className="text-sm text-white/80">1-800-FAN-PROS</div>
+            <div className="text-sm text-white/80">{BUSINESS_INFO.contact.phone}</div>
           </div>
           
           <div className="flex flex-col items-center">
             <Icon name="EnvelopeIcon" size={24} className="mb-2" />
             <div className="font-semibold mb-1">Email Us</div>
-            <div className="text-sm text-white/80">info@industrialfanpro.com</div>
+            <div className="text-sm text-white/80">{BUSINESS_INFO.contact.email}</div>
           </div>
           
           <div className="flex flex-col items-center">
             <Icon name="MapPinIcon" size={24} className="mb-2" />
             <div className="font-semibold mb-1">Visit Us</div>
-            <div className="text-sm text-white/80">123 Industrial Blvd, Manufacturing City</div>
+            <div className="text-sm text-white/80">{BUSINESS_INFO.address.full}</div>
           </div>
         </div>
       </div>

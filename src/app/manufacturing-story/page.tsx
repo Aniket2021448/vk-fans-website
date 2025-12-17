@@ -10,10 +10,33 @@ import SustainabilitySection from './components/SustainabilitySection';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
 import ProductCarousel from '@/components/common/ProductCarousel';
+import { BUSINESS_INFO } from '@/constants/business';
 
 export const metadata: Metadata = {
-  title: 'Manufacturing Story - IndustrialFan Pro',
-  description: 'Discover the craftsmanship behind IndustrialFan Pro. Explore our state-of-the-art facility, meet our skilled team, and learn about our commitment to quality, sustainability, and manufacturing excellence since 1995.',
+  title: `Manufacturing Story - VK Fans Premium Fan Manufacturing in Delhi Since 1995`,
+  description: `Explore VK Fans' state-of-the-art manufacturing facility in Delhi. Learn about our ISO certified production process, skilled workforce, sustainability initiatives, and commitment to quality in ceiling fans, exhaust fans, and ventilation solutions.`,
+  keywords: [
+    'fan manufacturing process',
+    'ceiling fan factory Delhi',
+    'ISO certified fan manufacturer',
+    'industrial fan production',
+    'sustainable fan manufacturing',
+    'fan quality standards',
+    'manufacturing excellence',
+    'fan facility tour',
+    'engineering team',
+    'production capacity',
+    ...BUSINESS_INFO.seo.keywords,
+  ].join(', '),
+  openGraph: {
+    title: `${BUSINESS_INFO.name} - Premium Fan Manufacturing Story`,
+    description: 'State-of-the-art facility, ISO certifications, sustainable production, and manufacturing excellence.',
+    type: 'website',
+    url: 'https://vkfans.com/manufacturing-story',
+  },
+  alternates: {
+    canonical: 'https://vkfans.com/manufacturing-story',
+  },
 };
 
 export default function ManufacturingStoryPage() {

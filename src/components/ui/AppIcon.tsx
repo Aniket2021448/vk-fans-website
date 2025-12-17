@@ -1,14 +1,46 @@
 'use client';
 
 import React from 'react';
-import * as HeroIcons from '@heroicons/react/24/outline';
-import * as HeroIconsSolid from '@heroicons/react/24/solid';
-import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
+import {
+    PhoneIcon,
+    EnvelopeIcon,
+    MapPinIcon,
+    XMarkIcon,
+    Bars3Icon,
+    CheckCircleIcon,
+    ChevronDownIcon,
+    ArrowRightIcon,
+    ChatBubbleLeftRightIcon,
+    ExclamationTriangleIcon,
+    ChevronRightIcon,
+    BoltIcon,
+    SignalIcon,
+    SparklesIcon,
+    EyeIcon,
+    CheckIcon,
+    ScaleIcon,
+    SpeakerWaveIcon,
+    ArrowPathIcon,
+    DocumentArrowDownIcon,
+    VideoCameraIcon,
+    DocumentTextIcon,
+    StarIcon,
+    ChevronLeftIcon,
+    PlusIcon,
+    MinusIcon,
+    InformationCircleIcon,
+    SpeakerXMarkIcon,
+    AdjustmentsHorizontalIcon,
+    Squares2X2Icon,
+    ListBulletIcon,
+    QuestionMarkCircleIcon,
+} from '@heroicons/react/24/outline';
+import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 
 type IconVariant = 'outline' | 'solid';
 
 interface IconProps {
-    name: string; // Changed to string to accept dynamic values
+    name: string; // dynamic icon name from a curated set
     variant?: IconVariant;
     size?: number;
     className?: string;
@@ -16,6 +48,45 @@ interface IconProps {
     disabled?: boolean;
     [key: string]: any;
 }
+
+const ICONS_OUTLINE: Record<string, React.ComponentType<any>> = {
+    PhoneIcon,
+    EnvelopeIcon,
+    MapPinIcon,
+    XMarkIcon,
+    Bars3Icon,
+    CheckCircleIcon,
+    ChevronDownIcon,
+    ArrowRightIcon,
+    ChatBubbleLeftRightIcon,
+    ExclamationTriangleIcon,
+    ChevronRightIcon,
+    BoltIcon,
+    SignalIcon,
+    SparklesIcon,
+    EyeIcon,
+    CheckIcon,
+    ScaleIcon,
+    SpeakerWaveIcon,
+    ArrowPathIcon,
+    // alias common naming to actual icon
+    DocumentArrowDownIcon,
+    VideoCameraIcon,
+    DocumentTextIcon,
+    StarIcon,
+    ChevronLeftIcon,
+    PlusIcon,
+    MinusIcon,
+    InformationCircleIcon,
+    SpeakerXMarkIcon,
+    AdjustmentsHorizontalIcon,
+    Squares2X2Icon,
+    ListBulletIcon,
+};
+
+const ICONS_SOLID: Record<string, React.ComponentType<any>> = {
+    StarIcon: StarIconSolid,
+};
 
 function Icon({
     name,
@@ -26,8 +97,10 @@ function Icon({
     disabled = false,
     ...props
 }: IconProps) {
-    const iconSet = variant === 'solid' ? HeroIconsSolid : HeroIcons;
-    const IconComponent = iconSet[name as keyof typeof iconSet] as React.ComponentType<any>;
+    const iconSet = variant === 'solid' ? ICONS_SOLID : ICONS_OUTLINE;
+    // Support alias: map 'DocumentDownloadIcon' to DocumentArrowDownIcon
+    const normalizedName = name === 'DocumentDownloadIcon' ? 'DocumentArrowDownIcon' : name;
+    const IconComponent = iconSet[normalizedName];
 
     if (!IconComponent) {
         return (
@@ -41,15 +114,15 @@ function Icon({
         );
     }
 
-    return (
-        <IconComponent
-            width={size}
-            height={size}
-            className={`${disabled ? 'opacity-50 cursor-not-allowed' : onClick ? 'cursor-pointer hover:opacity-80' : ''} ${className}`}
-            onClick={disabled ? undefined : onClick}
-            {...props}
-        />
-    );
+        return (
+            <IconComponent
+                width={size}
+                height={size}
+                className={`${disabled ? 'opacity-50 cursor-not-allowed' : onClick ? 'cursor-pointer hover:opacity-80' : ''} ${className}`}
+                onClick={disabled ? undefined : onClick}
+                {...props}
+            />
+        );
 }
 
 export default Icon; 

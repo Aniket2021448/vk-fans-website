@@ -38,8 +38,8 @@ const Footer = () => {
   const socialLinks = [
     { name: 'Facebook', icon: 'ShareIcon', href: BUSINESS_INFO.social.facebook },
     { name: 'Twitter', icon: 'ChatBubbleLeftIcon', href: BUSINESS_INFO.social.twitter },
-    { name: 'LinkedIn', icon: 'BriefcaseIcon', href: BUSINESS_INFO.social.linkedin },
-    { name: 'Instagram', icon: 'PhotoIcon', href: BUSINESS_INFO.social.instagram },
+    { name: 'LinkedIn', icon: 'ArrowRightIcon', href: BUSINESS_INFO.social.linkedin },
+    { name: 'Instagram', icon: 'SparklesIcon', href: BUSINESS_INFO.social.instagram },
   ];
 
   return (
@@ -71,7 +71,7 @@ const Footer = () => {
               </div>
               <span className="text-xl font-bold">{BUSINESS_INFO.name}</span>
             </Link>
-            <p className="text-gray-300 mb-4 leading-relaxed">
+            <p className="text-gray-200 mb-4 leading-relaxed">
               Premium industrial and domestic fans manufactured with precision. Quality, reliability, and
               performance you can trust.
             </p>
@@ -81,19 +81,19 @@ const Footer = () => {
               <p className="font-semibold text-white">Contact: {BUSINESS_INFO.contact.person}</p>
               <a
                 href={`tel:${BUSINESS_INFO.contact.phone}`}
-                className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                className="flex items-center gap-2 text-gray-200 hover:text-white transition-colors"
               >
                 <Icon name="PhoneIcon" size={16} />
                 {BUSINESS_INFO.contact.phone}
               </a>
               <a
                 href={`mailto:${BUSINESS_INFO.contact.email}`}
-                className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                className="flex items-center gap-2 text-gray-200 hover:text-white transition-colors"
               >
                 <Icon name="EnvelopeIcon" size={16} />
                 {BUSINESS_INFO.contact.email}
               </a>
-              <div className="flex items-start gap-2 text-gray-300">
+              <div className="flex items-start gap-2 text-gray-200">
                 <Icon name="MapPinIcon" size={16} className="mt-0.5 shrink-0" />
                 <span>{BUSINESS_INFO.address.full}</span>
               </div>
@@ -121,7 +121,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.products.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-gray-300 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-gray-200 hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -135,7 +135,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-gray-300 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-gray-200 hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -149,7 +149,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-gray-300 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-gray-200 hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -161,25 +161,25 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-300 text-sm">
               {isHydrated ? `© ${currentYear}` : '© 2025'} {BUSINESS_INFO.name}. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <Link
-                href="/product-catalog"
-                className="text-gray-400 hover:text-white transition-colors"
+                href="/privacy-policy"
+                className="text-gray-300 hover:text-white transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
-                href="/product-catalog"
-                className="text-gray-400 hover:text-white transition-colors"
+                href="/terms-of-service"
+                className="text-gray-300 hover:text-white transition-colors"
               >
                 Terms of Service
               </Link>
               <Link
-                href="/product-catalog"
-                className="text-gray-400 hover:text-white transition-colors"
+                href="/cookie-policy"
+                className="text-gray-300 hover:text-white transition-colors"
               >
                 Cookie Policy
               </Link>

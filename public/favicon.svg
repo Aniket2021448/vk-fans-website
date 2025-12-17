@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <defs>
+    <style>
+      .vk-bg { fill: #C41C3B; }
+      .vk-text { fill: white; font-family: Arial, sans-serif; font-weight: bold; font-size: 120px; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect class="vk-bg" width="192" height="192" rx="24"/>
+  
+  <!-- VK Text -->
+  <text class="vk-text" x="96" y="140" text-anchor="middle">VK</text>
+</svg>

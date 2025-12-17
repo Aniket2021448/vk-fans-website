@@ -36,6 +36,7 @@
 
 import React from 'react';
 import { Suspense } from 'react';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import type { Metadata, Viewport } from 'next';
 import '@/styles/index.css';
 import WhatsAppButton from '@/components/common/WhatsAppButton';
@@ -50,13 +51,19 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://vkfans.com'),
   title: {
-    default: `${BUSINESS_INFO.name} - Premium Industrial & Domestic Fans`,
+    default: `${BUSINESS_INFO.name} - Premium Industrial & Domestic Fans Manufacturer in Delhi`,
     template: `%s | ${BUSINESS_INFO.name}`,
   },
   description: BUSINESS_INFO.seo.description,
+  keywords: BUSINESS_INFO.seo.keywords.join(', '),
   authors: [{ name: BUSINESS_INFO.name, url: 'https://vkfans.com' }],
   creator: BUSINESS_INFO.name,
   publisher: BUSINESS_INFO.name,
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -67,13 +74,22 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: 'https://vkfans.com',
     siteName: BUSINESS_INFO.name,
-    title: `${BUSINESS_INFO.name} - Industrial & Domestic Fans`,
+    title: `${BUSINESS_INFO.name} - Industrial & Domestic Fans Manufacturer`,
     description: BUSINESS_INFO.seo.description,
+    images: [
+      {
+        url: 'https://vkfans.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: `${BUSINESS_INFO.name} - Premium Fans`,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${BUSINESS_INFO.name} - Premium Fans`,
+    title: `${BUSINESS_INFO.name} - Premium Industrial & Domestic Fans`,
     description: BUSINESS_INFO.seo.description,
+    creator: '@vkfans',
   },
   robots: {
     index: true,
@@ -90,8 +106,26 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'your-google-verification-code',
+    other: {
+      'msvalidate.01': 'your-bing-verification-code',
+    },
+  },
+  alternates: {
+    canonical: 'https://vkfans.com',
   },
 };
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-jetbrains',
+});
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -99,17 +133,29 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" data-gramm="false" data-gramm_editor="false">
       <head>
         <link rel="canonical" href="https://vkfans.com" />
+        <link rel="preconnect" href="https://img.rocket.new" crossOrigin="" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
+        
+        {/* Geo-targeting for local SEO */}
         <meta name="geo.region" content="IN-DL" />
-        <meta name="geo.placename" content="Delhi" />
+        <meta name="geo.placename" content="Delhi, India" />
         <meta name="geo.position" content="28.8386;77.0914" />
         <meta name="ICBM" content="28.8386, 77.0914" />
-
-        <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Findustrial8713back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.11" />
-        <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.1" /></head>
-      <body>
+        
+        {/* Sitemap and RSS */}
+        <link rel="sitemap" href="/sitemap.xml" />
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+        
+        {/* Additional SEO meta tags */}
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="author" content="VK Fans" />
+        <meta name="distribution" content="global" />
+      </head>
+      <body suppressHydrationWarning className={`${inter.variable} ${jetbrains.variable}`}>
         <Suspense fallback={null}>{children}</Suspense>
         <WhatsAppButton />
       </body>

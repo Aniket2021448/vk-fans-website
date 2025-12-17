@@ -3,10 +3,33 @@ import Header from '@/components/common/Header';
 import ProductCarousel from '@/components/common/ProductCarousel';
 import Footer from '@/app/homepage/components/Footer';
 import Icon from '@/components/ui/AppIcon';
+import { BUSINESS_INFO } from '@/constants/business';
 
 export const metadata: Metadata = {
-  title: 'Technical Support - VK Fans',
-  description: 'Get technical assistance for your VK Fans products. Expert support for troubleshooting, maintenance, and optimal performance.',
+  title: `Technical Support & Troubleshooting - VK Fans | Fan Repair & Maintenance`,
+  description: `Expert technical support for VK Fans products. Troubleshooting guides, fan repair tips, maintenance schedules, and performance optimization. Fix ceiling fan noise, speed issues, and installation problems.`,
+  keywords: [
+    'ceiling fan troubleshooting',
+    'fan noise problem',
+    'fan speed issue',
+    'fan not working',
+    'fan motor problem',
+    'fan maintenance guide',
+    'fan repair tips',
+    'fan installation guide',
+    'technical support',
+    'fan safety tips',
+    ...BUSINESS_INFO.seo.keywords,
+  ].join(', '),
+  openGraph: {
+    title: `${BUSINESS_INFO.name} - Technical Support & Troubleshooting`,
+    description: 'Expert guides for fan troubleshooting, repair, maintenance, and optimal performance.',
+    type: 'website',
+    url: 'https://vkfans.com/support/technical-support',
+  },
+  alternates: {
+    canonical: 'https://vkfans.com/support/technical-support',
+  },
 };
 
 export default function TechnicalSupportPage() {
@@ -69,10 +92,7 @@ export default function TechnicalSupportPage() {
                 </div>
                 <h3 className="text-lg font-semibold text-foreground">{topic.title}</h3>
               </div>
-              <p className="text-muted-foreground mb-4">{topic.content}</p>
-              <button className="text-primary font-medium hover:underline flex items-center gap-1">
-                Learn More <Icon name="ArrowRightIcon" size={16} />
-              </button>
+              <p className="text-muted-foreground">{topic.content}</p>
             </div>
           ))}
         </div>
@@ -81,30 +101,58 @@ export default function TechnicalSupportPage() {
         <div className="bg-surface border border-border rounded-lg p-8 mb-16">
           <h2 className="text-2xl font-bold text-foreground mb-4">Still Need Help?</h2>
           <p className="text-muted-foreground mb-6">
-            Our technical support team is available to help with any questions or issues you may encounter.
+            Reach our technicians directly with your model number, invoice date, and a short description of the issue.
           </p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-6">
             <div className="flex items-start gap-4">
               <Icon name="PhoneIcon" size={24} className="text-primary mt-1" />
               <div>
                 <h4 className="font-semibold text-foreground mb-1">Phone Support</h4>
-                <p className="text-muted-foreground">+91-XXX-XXX-XXXX</p>
+                <p className="text-muted-foreground">{BUSINESS_INFO.contact.phone}</p>
+                <p className="text-xs text-text-secondary">9:00 AM - 6:00 PM IST (Mon-Sat)</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Icon name="EnvelopeIcon" size={24} className="text-primary mt-1" />
               <div>
                 <h4 className="font-semibold text-foreground mb-1">Email Support</h4>
-                <p className="text-muted-foreground">support@vkfans.com</p>
+                <p className="text-muted-foreground">{BUSINESS_INFO.contact.email}</p>
+                <p className="text-xs text-text-secondary">Share model, symptoms, and a short video if possible.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Icon name="ChatBubbleLeftRightIcon" size={24} className="text-primary mt-1" />
               <div>
-                <h4 className="font-semibold text-foreground mb-1">Live Chat</h4>
-                <p className="text-muted-foreground">Available 9 AM - 6 PM IST</p>
+                <h4 className="font-semibold text-foreground mb-1">WhatsApp & Chat</h4>
+                <p className="text-muted-foreground">{BUSINESS_INFO.contact.whatsappLink.replace('https://','')}</p>
+                <p className="text-xs text-text-secondary">Best for quick troubleshooting steps.</p>
               </div>
             </div>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={`tel:${BUSINESS_INFO.contact.phone}`}
+              className="flex items-center gap-2 px-5 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              <Icon name="PhoneIcon" size={18} />
+              Call Now
+            </a>
+            <a
+              href="/contact-us"
+              className="flex items-center gap-2 px-5 py-3 border border-primary text-primary rounded-lg hover:bg-primary/5 transition-colors"
+            >
+              <Icon name="EnvelopeIcon" size={18} />
+              Email Support
+            </a>
+            <a
+              href={`${BUSINESS_INFO.contact.whatsappLink}?text=${encodeURIComponent('Hi VK Fans Support, I need help with my fan. Model: ____. Issue: _____. Invoice date: _____.')}`}
+              className="flex items-center gap-2 px-5 py-3 bg-[#25D366] text-white rounded-lg hover:bg-[#20BA5A] transition-colors"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Icon name="ChatBubbleLeftRightIcon" size={18} />
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
       </main>
